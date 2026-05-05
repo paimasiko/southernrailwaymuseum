@@ -8,26 +8,21 @@ export function HomePage() {
       title: "Southern Railway Baggage Car",
       description:
         "Explore the workhorses of American railroading, from boxcars to refrigerator cars that moved goods across the nation.",
-      era: "Steam Era",
-      image: "/sou6457.jpg",
+      image: `${import.meta.env.BASE_URL}sou6457.jpg`,
       slug: "baggage-car",
     },
     {
       title: "Thomas Ruffin Car",
       description:
         "Step inside authentic cabooses and learn about the crews who lived and worked in these iconic railway cars.",
-      era: "Gilded Era",
-      image:
-        "/thomas-ruffin.jpg",
+      image: `${import.meta.env.BASE_URL}thomas-ruffin.jpg`,
       slug: "cabooses",
     },
     {
       title: "New Georgia Car",
       description:
         "Experience the golden age of luxury rail travel in beautifully restored sleeping cars from America's passenger train era.",
-      era: "Post-War Era",
-      image:
-        "/newgeorgia.jpg",
+      image: `${import.meta.env.BASE_URL}newgeorgia.jpg`,
       slug: "pullman-sleeper",
     },
   ];
@@ -37,12 +32,12 @@ export function HomePage() {
       {/* Hero Section */}
       <section className="relative h-[550px] text-white">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/background_railroad.jpg')",
-          }}
-        />
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('${import.meta.env.BASE_URL}background_railroad.jpg')`,
+            }}
+          />
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50" />

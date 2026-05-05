@@ -9,7 +9,7 @@ export function BaggageCarPage() {
       description:
         "The Southern Railway Baggage Car ran on the Georgia Southern Railways throughout the early 1900s. View a map of the full line system here.",
       era: "Historic Map",
-      image: "/georgiasou.png",
+      image: `${import.meta.env.BASE_URL}georgiasou.png`,
       slug: "georgia-southern-map",
       externalLink:
         "https://web.archive.org/web/20151221184804/http://www.railga.com/gsf18map.html", // Replace with your link
@@ -19,7 +19,7 @@ export function BaggageCarPage() {
       description:
         "Pullman Yards, near Kirkwood in Atlanta, was the site of the Pullman Company's last sleeper car facility. Read more about the site and how it has been transformed in the city over the past decades.",
       era: "Archival Photo",
-      image: "/factory.png",
+      image: `${import.meta.env.BASE_URL}factory.png`,
       slug: "pullman-yards",
       externalLink: "https://example.com/pullman-yards", // Replace with your link
     },
@@ -30,7 +30,7 @@ export function BaggageCarPage() {
       {/* Hero */}
       <section className="relative h-96 overflow-hidden">
         <img
-          src="/sou6457.jpg"
+          src={`${import.meta.env.BASE_URL}sou6457.jpg`}
           alt="Southern Railway Baggage Car"
           className="w-full h-full object-cover"
         />

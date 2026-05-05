@@ -9,7 +9,7 @@ export function CaboosesPage() {
       description:
         "By Howard Fogg",
       era: "Historic Map",
-      image: "/crescen.png",
+      image: `${import.meta.env.BASE_URL}crescen.png`,
       slug: "georgia-southern-map",
       externalLink:
         "https://web.archive.org/web/20151221184804/http://www.railga.com/gsf18map.html", // Replace with your link
@@ -19,7 +19,7 @@ export function CaboosesPage() {
       description:
         "Not issued when the train was running.",
       era: "Archival Photo",
-      image: "/crescen2.png",
+      image: `${import.meta.env.BASE_URL}crescen2.png`,
       slug: "pullman-yards",
       externalLink: "https://example.com/pullman-yards", // Replace with your link
     },
@@ -30,7 +30,7 @@ export function CaboosesPage() {
       {/* Hero */}
       <section className="relative h-96 overflow-hidden">
         <img
-          src="/thomas-ruffin.jpg"
+          src={`${import.meta.env.BASE_URL}thomas-ruffin.jpg`}
           alt="Thomas Ruffin Car"
           className="w-full h-full object-cover"
         />

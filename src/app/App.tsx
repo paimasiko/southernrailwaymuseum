@@ -17,6 +17,7 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/southernrailwaymuseum" element={<HomePage />} />
             <Route path="/exhibitions" element={<ExhibitionsPage />} />
             <Route path="/exhibitions/baggage-car" element={<BaggageCarPage />} />
             <Route path="/exhibitions/freight-cars" element={<FreightCarsPage />} />

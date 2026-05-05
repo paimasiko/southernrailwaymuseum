@@ -101,7 +101,7 @@ export function FreightCarsPage() {
             {/* Artifact Card 1 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-border">
               <img
-                src="/georgia-southern-map.jpg"
+                src={`${import.meta.env.BASE_URL}georgiasou.png`}
                 alt="Georgia Southern and Florida Railroads Map"
                 className="w-full h-64 object-cover"
               />
@@ -130,7 +130,7 @@ export function FreightCarsPage() {
             {/* Artifact Card 2 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-border">
               <img
-                src="/historic-pullman-yards.jpg"
+                src={`${import.meta.env.BASE_URL}factory.png`}
                 alt="Historic Pullman Yards"
                 className="w-full h-64 object-cover grayscale"
               />

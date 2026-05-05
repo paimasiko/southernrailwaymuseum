@@ -8,7 +8,7 @@ export function PullmanSleeperPage() {
       description:
         "Cincinnati Southern Railway connects the Cincinnati to the south. Began serivce around 1880.",
       era: "Historic Map",
-      image: "/Cincinati.jpg",
+      image: `${import.meta.env.BASE_URL}Cincinati.jpg`,
       slug: "georgia-southern-map",
       externalLink:
         "https://web.archive.org/web/20151221184804/http://www.railga.com/gsf18map.html", // Replace with your link
@@ -19,7 +19,7 @@ export function PullmanSleeperPage() {
       description:
         "Likely dates from 1917-1926",
       era: "Archival Photo",
-      image: "/diningcar.png",
+      image: `${import.meta.env.BASE_URL}diningcar.png`,
       slug: "pullman-yards",
       externalLink: "https://example.com/pullman-yards", // Replace with your link
     },
@@ -30,7 +30,7 @@ export function PullmanSleeperPage() {
       {/* Hero */}
       <section className="relative h-96 overflow-hidden">
         <img
-          src="/newgeorgia.jpg"
+          src={`${import.meta.env.BASE_URL}newgeorgia.jpg`}
           alt="New Georgia Car (Pullman Coach 3780)"
           className="w-full h-full object-cover"
         />

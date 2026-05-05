@@ -6,29 +6,29 @@ export function ExhibitionsPage() {
 
   const exhibitions = [
     {
-      title: "Freight Car Collection",
-      description: "Explore the workhorses of American railroading, from boxcars to refrigerator cars that moved goods across the nation.",
-      era: "1920s - 1960s",
-      image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&q=80",
-      slug: "freight-cars",
-      category: "freight"
+      title: "Southern Railway Baggage Car",
+      description:
+        "Explore the workhorses of American railroading, from boxcars to refrigerator cars that moved goods across the nation.",
+      image: `${import.meta.env.BASE_URL}sou6457.jpg`,
+      slug: "baggage-car",
+      category: "baggage",
     },
     {
-      title: "Historic Caboose Collection",
-      description: "Step inside authentic cabooses and learn about the crews who lived and worked in these iconic railway cars.",
-      era: "1930s - 1980s",
-      image: "https://images.unsplash.com/photo-1519669700-30773ef18ce9?w=800&q=80",
+      title: "Thomas Ruffin Car",
+      description:
+        "Step inside authentic cabooses and learn about the crews who lived and worked in these iconic railway cars.",
+      image: `${import.meta.env.BASE_URL}thomas-ruffin.jpg`,
       slug: "cabooses",
-      category: "freight"
+      category: "passenger",
     },
     {
-      title: "Pullman Sleeper Car",
-      description: "Experience the golden age of luxury rail travel in beautifully restored sleeping cars from America's passenger train era.",
-      era: "1940s - 1960s",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
+      title: "New Georgia Car",
+      description:
+        "Experience the golden age of luxury rail travel in beautifully restored sleeping cars from America's passenger train era.",
+      image: `${import.meta.env.BASE_URL}newgeorgia.jpg`,
       slug: "pullman-sleeper",
-      category: "passenger"
-    }
+      category: "passenger",
+    },
   ];
 
   const filteredExhibitions = filter === "all"
@@ -64,14 +64,24 @@ export function ExhibitionsPage() {
                 All Exhibitions
               </button>
               <button
-                onClick={() => setFilter("freight")}
+                onClick={() => setFilter("baggage")}
                 className={`px-5 py-2 rounded-full transition-colors ${
-                  filter === "freight"
+                  filter === "baggage"
                     ? "bg-primary text-primary-foreground"
                     : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
               >
-                Freight Cars
+                Baggage Cars
+              </button>
+              <button
+                onClick={() => setFilter("passenger")}
+                className={`px-5 py-2 rounded-full transition-colors ${
+                  filter === "passenger"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                }`}
+              >
+                Passenger Cars
               </button>
             </div>
             <p className="text-muted-foreground">

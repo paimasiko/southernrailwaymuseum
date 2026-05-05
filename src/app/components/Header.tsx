@@ -7,7 +7,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-4 -ml-4">
             <img
-              src="/serm.png"
+              src={`${import.meta.env.BASE_URL}serm.png`}
               alt="Southeastern Railway Museum"
               className="h-18 object-contain"
             />

@@ -4,7 +4,6 @@ import { ArrowRight, Tag } from "lucide-react";
 interface ExhibitionCardProps {
   title: string;
   description: string;
-  era: string;
   image: string;
   slug: string;
   externalLink?: string;
@@ -13,16 +12,25 @@ interface ExhibitionCardProps {
 export function ExhibitionCard({
   title,
   description,
-  era,
   image,
   slug,
   externalLink,
 }: ExhibitionCardProps) {
+  let src = image;
+  const base = import.meta.env.BASE_URL || '/';
+  if (
+    !/^https?:\/\//.test(image) &&
+    !image.startsWith('data:') &&
+    !image.startsWith(base)
+  ) {
+    src = image.startsWith('/') ? `${base}${image.slice(1)}` : `${base}${image}`;
+  }
+  console.debug('[ExhibitionCard]', title, '->', src);
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
       <div className="aspect-[16/10] overflow-hidden">
         <img
-          src={image}
+          src={src}
           alt={title}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
