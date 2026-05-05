@@ -1,0 +1,55 @@
+import { Link } from "react-router";
+import { ArrowRight, Tag } from "lucide-react";
+
+interface ExhibitionCardProps {
+  title: string;
+  description: string;
+  era: string;
+  image: string;
+  slug: string;
+  externalLink?: string;
+}
+
+export function ExhibitionCard({
+  title,
+  description,
+  era,
+  image,
+  slug,
+  externalLink,
+}: ExhibitionCardProps) {
+  return (
+    <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+      <div className="aspect-[16/10] overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="font-semibold mb-2">{title}</h3>
+        <p className="text-sm text-muted-foreground mb-4">
+          {description}
+        </p>
+        {externalLink ? (
+          <a
+            href={externalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all"
+          >
+            Explore <ArrowRight className="w-4 h-4" />
+          </a>
+        ) : (
+          <Link
+            to={`/exhibitions/${slug}`}
+            className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all"
+          >
+            Explore <ArrowRight className="w-4 h-4" />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
