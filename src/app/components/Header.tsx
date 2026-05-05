@@ -15,7 +15,7 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <Link
-              to="/"
+              to="/southernraillwaymuseum"
               className="text-foreground hover:text-primary transition-colors"
             >
               Home
