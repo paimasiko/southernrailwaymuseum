@@ -10,6 +10,7 @@ interface ExhibitionCardProps {
   slug: string;
   externalLink?: string;
   variant?: "train" | "artifact";
+  imageObjectPosition?: string;
   endIcon?: ReactNode;
 }
 
@@ -21,6 +22,7 @@ export function ExhibitionCard({
   externalLink,
   variant,
   endIcon,
+  imageObjectPosition,
 }: ExhibitionCardProps) {
   let src = image;
   const base = import.meta.env.BASE_URL || '/';
@@ -48,6 +50,7 @@ export function ExhibitionCard({
           src={src}
           alt={title}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          style={imageObjectPosition ? { objectPosition: imageObjectPosition } : undefined}
         />
       </div>
       <div className="p-6">

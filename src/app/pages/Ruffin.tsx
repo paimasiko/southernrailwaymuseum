@@ -11,9 +11,9 @@ export function CaboosesPage() {
         "By Howard Fogg",
       era: "Historic Map",
       image: `${import.meta.env.BASE_URL}crescen.png`,
-      slug: "georgia-southern-map",
+      slug: "painting",
       externalLink:
-        "https://web.archive.org/web/20151221184804/http://www.railga.com/gsf18map.html", // Replace with your link
+        "https://www.trainweb.us/fredatsf/crescent.htm",
     },
     {
       title: "Poster of Crescent",
@@ -21,8 +21,8 @@ export function CaboosesPage() {
         "Not issued when the train was running.",
       era: "Archival Photo",
       image: `${import.meta.env.BASE_URL}crescen2.png`,
-      slug: "pullman-yards",
-      externalLink: "https://example.com/pullman-yards", // Replace with your link
+      slug: "poster",
+      externalLink: "https://www.trainweb.us/fredatsf/crescent.htm",
     },
   ];
 
@@ -137,6 +137,7 @@ export function CaboosesPage() {
                 key={artifact.slug}
                 {...artifact}
                 variant="artifact"
+                imageObjectPosition={artifact.slug === 'poster' ? 'center top' : undefined}
               />
             ))}
           </div>

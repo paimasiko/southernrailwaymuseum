@@ -12,7 +12,7 @@ export function PullmanSleeperPage() {
       image: `${import.meta.env.BASE_URL}Cincinati.jpg`,
       slug: "georgia-southern-map",
       externalLink:
-        "https://web.archive.org/web/20151221184804/http://www.railga.com/gsf18map.html", // Replace with your link
+        "https://thecsrt.org/history/",
     },
   ];
 

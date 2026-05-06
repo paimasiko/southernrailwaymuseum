@@ -22,7 +22,7 @@ export function BaggageCarPage() {
       era: "Archival Photo",
       image: `${import.meta.env.BASE_URL}factory.png`,
       slug: "pullman-yards",
-      externalLink: "https://example.com/pullman-yards", // Replace with your link
+      externalLink: "https://www.pullman-museum.org/pshs/pshsFullRecord.php?collection=pshs&pointer=14600",
     },
   ];
 
@@ -133,6 +133,7 @@ export function BaggageCarPage() {
               <ExhibitionCard
                 key={artifact.slug}
                 {...artifact}
+                imageObjectPosition={artifact.slug === 'georgia-southern-map' ? 'center bottom' : undefined}
               />
             ))}
           </div>
