@@ -4,8 +4,8 @@ import { Footer } from "./components/Footer";
 import { HomePage } from "./pages/HomePage";
 import { ExhibitionsPage } from "./pages/ExhibitionsPage";
 import { FreightCarsPage } from "./pages/FreightCarsPage";
-import { CaboosesPage } from "./pages/CaboosesPage";
-import { PullmanSleeperPage } from "./pages/PullmanSleeperPage";
+import { CaboosesPage } from "./pages/Ruffin";
+import { PullmanSleeperPage } from "./pages/NewGeorgiaCar";
 import { BaggageCarPage } from "./pages/BaggageCarPage";
 import { SupportPage } from "./pages/SupportPage";
 
@@ -21,8 +21,8 @@ export default function App() {
             <Route path="/exhibitions" element={<ExhibitionsPage />} />
             <Route path="/exhibitions/baggage-car" element={<BaggageCarPage />} />
             <Route path="/exhibitions/freight-cars" element={<FreightCarsPage />} />
-            <Route path="/exhibitions/cabooses" element={<CaboosesPage />} />
-            <Route path="/exhibitions/pullman-sleeper" element={<PullmanSleeperPage />} />
+            <Route path="/exhibitions/ruffin" element={<CaboosesPage />} />
+            <Route path="/exhibitions/newgeorgia" element={<PullmanSleeperPage />} />
             <Route path="/support" element={<SupportPage />} />
           </Routes>
         </main>

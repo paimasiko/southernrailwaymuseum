@@ -5,7 +5,7 @@ export function Header() {
     <header className="bg-white border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/southernraillwaymuseum" className="flex items-center gap-4 -ml-4">
+          <Link to="/southernrailwaymuseum" className="flex items-center gap-4 -ml-4">
             <img
               src={`${import.meta.env.BASE_URL}serm.png`}
               alt="Southeastern Railway Museum"
@@ -15,7 +15,7 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <Link
-              to="/southernraillwaymuseum"
+              to="/southernrailwaymuseum"
               className="text-foreground hover:text-primary transition-colors"
             >
               Home

@@ -7,23 +7,26 @@ export function HomePage() {
     {
       title: "Southern Railway Baggage Car",
       description:
-        "Explore the workhorses of American railroading, from boxcars to refrigerator cars that moved goods across the nation.",
+        `One of the few surviving baggage cars used by
+              Southern Railway from around 1952 to 1970.`,
       image: `${import.meta.env.BASE_URL}sou6457.jpg`,
       slug: "baggage-car",
     },
     {
       title: "Thomas Ruffin Car",
       description:
-        "Step inside authentic cabooses and learn about the crews who lived and worked in these iconic railway cars.",
+        `A luxury sleeper car built by Pullman in 1929 that
+              served on the Crescent Limited line owned by
+              Southern Railway.`,
       image: `${import.meta.env.BASE_URL}thomas-ruffin.jpg`,
-      slug: "cabooses",
+      slug: "ruffin",
     },
     {
       title: "New Georgia Car",
       description:
-        "Experience the golden age of luxury rail travel in beautifully restored sleeping cars from America's passenger train era.",
+        `Originally the Coach 3780, this car was a heavyweight passenger car built in 1922.`,
       image: `${import.meta.env.BASE_URL}newgeorgia.jpg`,
-      slug: "pullman-sleeper",
+      slug: "newgeorgia",
     },
   ];
 
