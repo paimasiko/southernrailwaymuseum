@@ -36,12 +36,12 @@ export function BaggageCarPage() {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-8 mb-5">
           <div className="max-w-7xl mx-auto px-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <h1 className="text-2xl md:text-4xl font-semibold text-white mb-2">
               Southern Railway Baggage Car
             </h1>
-            <p className="text-white/90 text-lg">
+            <p className="text-white/90 text-lg mt-4">
               Also known as the Point Noire
             </p>
           </div>
@@ -92,7 +92,7 @@ export function BaggageCarPage() {
       </section>
 
       {/* Virtual Tour */}
-      <section className="bg-primary text-white py-16">
+      <section className="bg-primary text-white px-24 py-10">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-4">
             Virtual Tour
@@ -104,7 +104,7 @@ export function BaggageCarPage() {
           </p>
 
           {/* Matterport Placeholder */}
-          <div className="bg-primary/80 border border-white/20 h-[400px] w-full flex items-center justify-center">
+          <div className="bg-primary/80 border border-white/20 h-[45rem] w-full flex items-center justify-center">
             <iframe
               width="100%"
               height="100%"

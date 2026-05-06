@@ -1,6 +1,7 @@
 import { Link } from "react-router";
-import { ArrowRight, Tag } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { ROUTES } from "../routes";
+import type { ReactNode } from "react";
 
 interface ExhibitionCardProps {
   title: string;
@@ -8,6 +9,8 @@ interface ExhibitionCardProps {
   image: string;
   slug: string;
   externalLink?: string;
+  variant?: "train" | "artifact";
+  endIcon?: ReactNode;
 }
 
 export function ExhibitionCard({
@@ -16,6 +19,8 @@ export function ExhibitionCard({
   image,
   slug,
   externalLink,
+  variant,
+  endIcon,
 }: ExhibitionCardProps) {
   let src = image;
   const base = import.meta.env.BASE_URL || '/';
@@ -27,6 +32,15 @@ export function ExhibitionCard({
     src = image.startsWith('/') ? `${base}${image.slice(1)}` : `${base}${image}`;
   }
   console.debug('[ExhibitionCard]', title, '->', src);
+  const displayVariant = variant ?? (externalLink ? "artifact" : "train");
+  const exploreIcon =
+    endIcon ??
+    (displayVariant === "artifact" ? (
+      <ExternalLink className="w-4 h-4" strokeWidth={3} />
+    ) : (
+      <ArrowRight className="w-4 h-4" strokeWidth={3} />
+    ));
+  const exploreLabel = displayVariant === "artifact" ? "Explore Artifact" : "Explore Exhibition";
   return (
     <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
       <div className="aspect-[16/10] overflow-hidden">
@@ -38,7 +52,7 @@ export function ExhibitionCard({
       </div>
       <div className="p-6">
         <h3 className="font-semibold mb-2">{title}</h3>
-        <p className="text-sm text-muted-foreground mb-4">
+        <p className="text-xs text-muted-foreground mb-4">
           {description}
         </p>
         {externalLink ? (
@@ -46,16 +60,16 @@ export function ExhibitionCard({
             href={externalLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all"
+            className="text-sm inline-flex items-center gap-2 text-primary hover:gap-3 transition-all"
           >
-            Explore <ArrowRight className="w-4 h-4" />
+            {exploreLabel} {exploreIcon}
           </a>
         ) : (
           <Link
             to={`${ROUTES.exhibitions}/${slug}`}
-            className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all"
+            className="text-sm inline-flex items-center gap-2 text-primary hover:gap-3 transition-all"
           >
-            Explore <ArrowRight className="w-4 h-4" />
+            {exploreLabel} {exploreIcon}
           </Link>
         )}
       </div>

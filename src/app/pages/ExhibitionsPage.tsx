@@ -21,7 +21,7 @@ export function ExhibitionsPage() {
               served on the Crescent Limited line owned by
               Southern Railway.`,
       image: `${import.meta.env.BASE_URL}thomas-ruffin.jpg`,
-      slug: "cabooses",
+      slug: "ruffin",
       category: "passenger",
     },
     {
@@ -29,7 +29,7 @@ export function ExhibitionsPage() {
       description:
         `Originally the Coach 3780, this car was a heavyweight passenger car built in 1922.`,
       image: `${import.meta.env.BASE_URL}newgeorgia.jpg`,
-      slug: "pullman-sleeper",
+      slug: "newgeorgia",
       category: "passenger",
     },
   ];
