@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { ExhibitionCard } from "../components/ExhibitionCard";
-import { Calendar, Cog, Package } from "lucide-react";
+import { ArrowLeft, Calendar, Cog, Package } from "lucide-react";
 import { ROUTES } from "../routes";
 
 export function BaggageCarPage() {
@@ -37,6 +37,10 @@ export function BaggageCarPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8 mb-5">
+          <Link to={ROUTES.exhibitions} className="flex text-[0.9rem] max-h-[2.8rem] w-fit border border-[#6D6D6D] items-center text-white gap-x-1 bg-[#6D6D6D]/55 p-3 mb-6  ml-6 rounded-sm ">
+            <ArrowLeft strokeWidth={2} width={25} height={18}></ArrowLeft>
+            Back to Exhibitions
+          </Link>
           <div className="max-w-7xl mx-auto px-6">
             <h1 className="text-2xl md:text-4xl font-semibold text-white mb-2">
               Southern Railway Baggage Car

@@ -132,10 +132,12 @@ export function HomePage() {
           </p>
 
           {/* Floor Plan Placeholder */}
-          <div className="bg-primary/80 border border-white/20 rounded-lg h-[400px] w-full flex items-center justify-center">
-            <span className="text-white/70">
-              Floor Plan Image Goes Here
-            </span>
+          <div className="bg-primary/80  rounded-lg h-[35rem] w-full flex items-center content-center justify-center">
+            <img
+              src={`${import.meta.env.BASE_URL}floorplan.png`}
+              alt="Museum Floor Plan"
+              className="h-full object-contain border border-white/20"
+            />
           </div>
         </div>
       </section>
