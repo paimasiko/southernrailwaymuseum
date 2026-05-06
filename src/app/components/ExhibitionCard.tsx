@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { ArrowRight, Tag } from "lucide-react";
+import { ROUTES } from "../routes";
 
 interface ExhibitionCardProps {
   title: string;
@@ -51,7 +52,7 @@ export function ExhibitionCard({
           </a>
         ) : (
           <Link
-            to={`/exhibitions/${slug}`}
+            to={`${ROUTES.exhibitions}/${slug}`}
             className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all"
           >
             Explore <ArrowRight className="w-4 h-4" />

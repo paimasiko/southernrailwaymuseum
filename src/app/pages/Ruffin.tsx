@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Calendar, Home, Users } from "lucide-react";
 import { ExhibitionCard } from "../components/ExhibitionCard";
+import { ROUTES } from "../routes";
 
 export function CaboosesPage() {
   const relatedArtifacts = [
@@ -152,7 +153,7 @@ export function CaboosesPage() {
           </p>
 
           <Link
-            to="/exhibitions"
+            to={ROUTES.exhibitions}
             className="inline-flex items-center gap-3 bg-primary px-10 py-4 rounded-md font-medium text-lg hover:bg-primary/90 transition-colors"
           >
             Explore All Exhibitions

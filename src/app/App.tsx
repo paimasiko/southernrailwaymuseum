@@ -8,6 +8,7 @@ import { CaboosesPage } from "./pages/Ruffin";
 import { PullmanSleeperPage } from "./pages/NewGeorgiaCar";
 import { BaggageCarPage } from "./pages/BaggageCarPage";
 import { SupportPage } from "./pages/SupportPage";
+import { ROUTES } from "./routes";
 
 export default function App() {
   return (
@@ -17,13 +18,13 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/southernrailwaymuseum" element={<HomePage />} />
-            <Route path="/exhibitions" element={<ExhibitionsPage />} />
-            <Route path="/exhibitions/baggage-car" element={<BaggageCarPage />} />
-            <Route path="/exhibitions/freight-cars" element={<FreightCarsPage />} />
-            <Route path="/exhibitions/ruffin" element={<CaboosesPage />} />
-            <Route path="/exhibitions/newgeorgia" element={<PullmanSleeperPage />} />
-            <Route path="/support" element={<SupportPage />} />
+            <Route path={ROUTES.home} element={<HomePage />} />
+            <Route path={ROUTES.exhibitions} element={<ExhibitionsPage />} />
+            <Route path={ROUTES.baggageCar} element={<BaggageCarPage />} />
+            <Route path={ROUTES.freightCars} element={<FreightCarsPage />} />
+            <Route path={ROUTES.ruffin} element={<CaboosesPage />} />
+            <Route path={ROUTES.newGeorgia} element={<PullmanSleeperPage />} />
+            <Route path={ROUTES.support} element={<SupportPage />} />
           </Routes>
         </main>
         <Footer />

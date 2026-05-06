@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ExhibitionCard } from "../components/ExhibitionCard";
 import { Clock, MapPin, Ticket, Users } from "lucide-react";
+import { ROUTES } from "../routes";
 
 export function HomePage() {
   const featuredExhibitions = [
@@ -60,7 +61,7 @@ export function HomePage() {
 
             <div className="flex gap-4">
               <Link
-                to="/exhibitions"
+                to={ROUTES.exhibitions}
                 className="bg-primary px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
               >
                 Explore Exhibitions
@@ -152,7 +153,7 @@ export function HomePage() {
           </p>
 
           <Link
-            to="/exhibitions"
+            to={ROUTES.exhibitions}
             className="inline-flex items-center gap-3 bg-primary px-10 py-4 rounded-md font-medium text-lg hover:bg-primary/90 transition-colors"
           >
             Explore All Exhibitions

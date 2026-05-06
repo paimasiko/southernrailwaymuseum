@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ExhibitionCard } from "../components/ExhibitionCard";
 import { Calendar, Cog, Package } from "lucide-react";
+import { ROUTES } from "../routes";
 
 export function BaggageCarPage() {
   const relatedArtifacts = [
@@ -147,7 +148,7 @@ export function BaggageCarPage() {
           </p>
 
           <Link
-            to="/exhibitions"
+            to={ROUTES.exhibitions}
             className="inline-flex items-center gap-3 bg-primary px-10 py-4 rounded-md font-medium text-lg hover:bg-primary/90 transition-colors"
           >
             Explore All Exhibitions
