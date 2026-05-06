@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exhibition Template</title>
+  <link rel="stylesheet" href="src/styles/theme.css" />
+  <link rel="stylesheet" href="src/styles/fonts.css" />
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "var(--primary)",
+            "primary-foreground": "var(--primary-foreground)",
+            foreground: "var(--foreground)",
+            "muted-foreground": "var(--muted-foreground)",
+            background: "var(--background)",
+            border: "var(--border)",
+            secondary: "var(--secondary)",
+            muted: "var(--muted)",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg-primary { background-color: var(--primary); }
+    .text-primary { color: var(--primary); }
+    .text-primary-foreground { color: var(--primary-foreground); }
+    .text-foreground { color: var(--foreground); }
+    .text-muted-foreground { color: var(--muted-foreground); }
+    .bg-background { background-color: var(--background); }
+    .bg-secondary { background-color: var(--secondary); }
+    .bg-muted { background-color: var(--muted); }
+    .border-border { border-color: var(--border); }
+    .hover\:bg-primary\/90:hover { background-color: color-mix(in srgb, var(--primary) 90%, black); }
+  </style>
+</head>
+<body class="bg-background text-foreground">
+  <div class="min-h-screen flex flex-col bg-background">
+    <header class="bg-white border-b border-border sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="HomePage.html" class="flex items-center gap-4 -ml-4">
+            <img src="public/serm2.png" alt="Southeastern Railway Museum" class="h-11 object-contain" />
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="ExhibitionsPage.html" class="text-foreground hover:text-primary transition-colors">Exhibitions</a>
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Support Us</a>
+            <a href="#about" class="text-foreground hover:text-primary transition-colors">About Us</a>
+            <a href="HomePage.html" class="bg-primary text-primary-foreground px-5 py-2 rounded-md hover:bg-primary/90 transition-colors">Plan Your Visit</a>
+          </nav>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-button" aria-label="Open menu" aria-expanded="false" class="p-2 rounded-md text-foreground hover:bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h18" />
+                <path d="M3 6h18" />
+                <path d="M3 18h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 transition-opacity opacity-0 pointer-events-none md:hidden"></div>
+
+      <aside id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform translate-x-full md:hidden z-50">
+        <div class="p-6 h-full flex flex-col">
+          <div class="flex items-center justify-end mb-6">
+            <button id="mobile-menu-close" aria-label="Close menu" class="p-2 rounded-md hover:bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6L6 18" />
+                <path d="M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <nav class="flex flex-col gap-4">
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="ExhibitionsPage.html" class="text-foreground hover:text-primary transition-colors">Exhibitions</a>
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Support Us</a>
+            <a href="#about" class="text-foreground hover:text-primary transition-colors">About Us</a>
+          </nav>
+
+          <div class="flex justify-center mt-4">
+            <a href="HomePage.html" class="bg-primary text-primary-foreground px-5 py-2 rounded-md hover:bg-primary/90 transition-colors">Plan Your Visit</a>
+          </div>
+
+          <div class="flex justify-center mt-auto">
+            <a href="HomePage.html" class="flex items-center">
+              <img src="public/serm2.png" alt="Southeastern Railway Museum" class="h-11 object-contain" />
+            </a>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <main class="flex-1">
+      <section class="relative h-96 overflow-hidden">
+        <div class="absolute inset-0 bg-[#000000]/60"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-8 mb-5">
+          <a href="ExhibitionsPage.html" class="flex text-[0.9rem] max-h-[2.8rem] w-fit border border-[#6D6D6D] items-center text-white gap-x-1 bg-[#6D6D6D]/55 p-3 mb-6 ml-6 rounded-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+            Back to Exhibitions
+          </a>
+          <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-2xl md:text-4xl font-semibold text-white mb-2">Placeholder Title</h1>
+            <p class="text-white/90 text-lg mt-4">Placeholder text here</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-secondary py-12 h-[40rem]">
+        <div class="max-w-4xl mx-auto px-6">
+          <h2 class="text-2xl font-bold mb-6">Overview</h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <span>Overview text on the history of the artifact and infromation can go here</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-primary text-white px-6 py-10">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-bold mb-4">Virtual Tour</h2>
+          <p class="text-lg opacity-90 mb-10">Add a 3D walkthrough of any available spaces here. Alternatively, a gallery view of images can also be placed.</p>
+          <div class="bg-primary/80 border border-white/20 w-full overflow-hidden rounded-md aspect-[16/9] flex items-center justify-center">
+            <img
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23d1d5db'/%3E%3C/svg%3E"
+              alt="Placeholder for Matterport walkthrough"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="pt-10 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="mb-10">
+            <h2 class="text-3xl font-bold mb-3">Artifacts</h2>
+            <p class="text-muted-foreground max-w-3xl">Explore the objects connected to this exhibition in more detail.</p>
+          </div>
+          <div class="max-w-md mx-auto">
+            <article class="bg-white border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+              <div class="aspect-[16/10] overflow-hidden">
+                <img
+                  src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect width='1600' height='900' fill='%23d1d5db'/%3E%3C/svg%3E"
+                  alt="Artifact Title"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold mb-2">Artifact Title</h3>
+                <p class="text-xs text-muted-foreground mb-4">Body text with information can be placed here</p>
+                <span class="text-sm inline-flex items-center gap-2 text-primary">
+                  Explore Artifact
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14 21 3" />
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  </svg>
+                </span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#1f1f1f] text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Begin Your Journey?</h2>
+          <p class="text-lg text-white/80 mb-10">Explore our complete collection of exhibitions and discover the rich history of southeastern railways.</p>
+          <a href="ExhibitionsPage.html" class="inline-flex items-center gap-3 bg-primary px-10 py-4 rounded-md font-medium text-lg hover:bg-primary/90 transition-colors">
+            Explore All Exhibitions
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#1f1f1f] text-white">
+      <div class="max-w-7xl mx-auto px-8 py-10">
+        <div class="border-t border-white/10 mb-16"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left justify-items-center">
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Visit</h3>
+            <p class="text-white/80 leading-8">
+              3595 Buford Highway<br />
+              Duluth, GA 30096<br />
+              (770) 476-2013
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Hours</h3>
+            <p class="text-white/80 leading-8">
+              Thursday – Saturday<br />
+              10 a.m. – 5 p.m.<br />
+              Sunday<br />
+              12 p.m. – 5 p.m.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Explore</h3>
+            <ul class="space-y-3 text-white/80">
+              <li>Exhibitions</li>
+              <li>Events</li>
+              <li><a href="ExhibitionTemplatePage.html" class="hover:text-white transition-colors">Exhibition Template</a></li>
+              <li><a href="ExhibitionTemplateGalleryPage.html" class="hover:text-white transition-colors">Gallery Template</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Support</h3>
+            <ul class="space-y-3 text-white/80">
+              <li>Donate</li>
+              <li>Volunteer</li>
+              <li>Museum Shop</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mt-20">
+          <p class="font-semibold text-lg">(c) 2019-2025 Southeastern Railway Museum.</p>
+          <p class="text-white/70 mt-3">Preserving railway heritage for future generations</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+    function openMenu() {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      mobileMenuOverlay.classList.add('opacity-100', 'pointer-events-auto');
+      mobileMenuButton.setAttribute('aria-expanded', 'true');
+      mobileMenuButton.setAttribute('aria-label', 'Close menu');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+      mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+      mobileMenuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+      mobileMenuButton.setAttribute('aria-label', 'Open menu');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuButton.addEventListener('click', () => {
+      const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    mobileMenuClose.addEventListener('click', closeMenu);
+    mobileMenuOverlay.addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>

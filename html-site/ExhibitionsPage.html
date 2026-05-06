@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Exhibitions</title>
+  <link rel="stylesheet" href="src/styles/theme.css" />
+  <link rel="stylesheet" href="src/styles/fonts.css" />
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "var(--primary)",
+            "primary-foreground": "var(--primary-foreground)",
+            foreground: "var(--foreground)",
+            "muted-foreground": "var(--muted-foreground)",
+            background: "var(--background)",
+            border: "var(--border)",
+            secondary: "var(--secondary)",
+            muted: "var(--muted)",
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg-primary { background-color: var(--primary); }
+    .text-primary { color: var(--primary); }
+    .text-primary-foreground { color: var(--primary-foreground); }
+    .text-foreground { color: var(--foreground); }
+    .text-muted-foreground { color: var(--muted-foreground); }
+    .bg-background { background-color: var(--background); }
+    .bg-secondary { background-color: var(--secondary); }
+    .bg-muted { background-color: var(--muted); }
+    .text-muted { color: var(--muted-foreground); }
+    .border-border { border-color: var(--border); }
+    .hover\:bg-primary\/90:hover { background-color: color-mix(in srgb, var(--primary) 90%, black); }
+    .hover\:bg-muted\/80:hover { background-color: color-mix(in srgb, var(--muted) 80%, black); }
+  </style>
+</head>
+<body class="bg-background text-foreground">
+  <div class="min-h-screen flex flex-col bg-background">
+    <header class="bg-white border-b border-border sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <a href="HomePage.html" class="flex items-center gap-4 -ml-4">
+            <img src="public/serm2.png" alt="Southeastern Railway Museum" class="h-11 object-contain" />
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="ExhibitionsPage.html" class="text-foreground hover:text-primary transition-colors">Exhibitions</a>
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Support Us</a>
+            <a href="#about" class="text-foreground hover:text-primary transition-colors">About Us</a>
+            <a href="HomePage.html" class="bg-primary text-primary-foreground px-5 py-2 rounded-md hover:bg-primary/90 transition-colors">Plan Your Visit</a>
+          </nav>
+
+          <div class="md:hidden">
+            <button id="mobile-menu-button" aria-label="Open menu" aria-expanded="false" class="p-2 rounded-md text-foreground hover:bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12h18" />
+                <path d="M3 6h18" />
+                <path d="M3 18h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 transition-opacity opacity-0 pointer-events-none md:hidden"></div>
+
+      <aside id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-xl transform transition-transform translate-x-full md:hidden z-50">
+        <div class="p-6 h-full flex flex-col">
+          <div class="flex items-center justify-end mb-6">
+            <button id="mobile-menu-close" aria-label="Close menu" class="p-2 rounded-md hover:bg-gray-100">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6L6 18" />
+                <path d="M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <nav class="flex flex-col gap-4">
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="ExhibitionsPage.html" class="text-foreground hover:text-primary transition-colors">Exhibitions</a>
+            <a href="HomePage.html" class="text-foreground hover:text-primary transition-colors">Support Us</a>
+            <a href="#about" class="text-foreground hover:text-primary transition-colors">About Us</a>
+          </nav>
+
+          <div class="flex justify-center mt-4">
+            <a href="HomePage.html" class="bg-primary text-primary-foreground px-5 py-2 rounded-md hover:bg-primary/90 transition-colors">Plan Your Visit</a>
+          </div>
+
+          <div class="flex justify-center mt-auto">
+            <a href="HomePage.html" class="flex items-center">
+              <img src="public/serm2.png" alt="Southeastern Railway Museum" class="h-11 object-contain" />
+            </a>
+          </div>
+        </div>
+      </aside>
+    </header>
+
+    <main class="flex-1">
+      <section class="bg-primary text-primary-foreground py-16">
+        <div class="max-w-7xl mx-auto px-6">
+          <h1 class="text-4xl font-bold mb-4">All Exhibitions</h1>
+          <p class="text-lg opacity-95">Explore our complete collection of historic railway cars, locomotives, and artifacts</p>
+        </div>
+      </section>
+
+      <section class="py-12">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="mb-8">
+            <div class="flex flex-wrap gap-3 mb-6">
+              <button data-filter="all" class="filter-btn px-5 py-2 rounded-full transition-colors bg-primary text-primary-foreground">All Exhibitions</button>
+              <button data-filter="baggage" class="filter-btn px-5 py-2 rounded-full transition-colors bg-muted text-muted-foreground hover:bg-muted/80">Baggage Cars</button>
+              <button data-filter="passenger" class="filter-btn px-5 py-2 rounded-full transition-colors bg-muted text-muted-foreground hover:bg-muted/80">Passenger Cars</button>
+            </div>
+            <p id="count-label" class="text-muted-foreground">Showing 3 Exhibitions</p>
+          </div>
+
+          <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="exhibition-card bg-white border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow" data-category="baggage">
+              <div class="aspect-[16/10] overflow-hidden">
+                <img src="public/sou6457.jpg" alt="Southern Railway Baggage Car" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold mb-2">Southern Railway Baggage Car</h3>
+                <p class="text-xs text-muted-foreground mb-4">One of the few surviving baggage cars used by Southern Railway from around 1952 to 1970.</p>
+                <a href="BaggageCarPage.html" class="text-sm inline-flex items-center gap-2 text-primary hover:gap-3 transition-all">
+                  Explore Exhibition
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="exhibition-card bg-white border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow" data-category="passenger">
+              <div class="aspect-[16/10] overflow-hidden">
+                <img src="public/thomas-ruffin.jpg" alt="Thomas Ruffin Car" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold mb-2">Thomas Ruffin Car</h3>
+                <p class="text-xs text-muted-foreground mb-4">A luxury sleeper car built by Pullman in 1929 that served on the Crescent Limited line owned by Southern Railway.</p>
+                <a href="Ruffin.html" class="text-sm inline-flex items-center gap-2 text-primary hover:gap-3 transition-all">
+                  Explore Exhibition
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="exhibition-card bg-white border border-border rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow" data-category="passenger">
+              <div class="aspect-[16/10] overflow-hidden">
+                <img src="public/newgeorgia.jpg" alt="New Georgia Car" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold mb-2">New Georgia Car</h3>
+                <p class="text-xs text-muted-foreground mb-4">Originally the Coach 3780, this car was a heavyweight passenger car built in 1922.</p>
+                <a href="NewGeorgiaCar.html" class="text-sm inline-flex items-center gap-2 text-primary hover:gap-3 transition-all">
+                  Explore Exhibition
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      
+    </main>
+
+    <footer class="bg-[#1f1f1f] text-white">
+      <div class="max-w-7xl mx-auto px-8 py-10">
+        <div class="border-t border-white/10 mb-16"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left justify-items-center">
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Visit</h3>
+            <p class="text-white/80 leading-8">
+              3595 Buford Highway<br />
+              Duluth, GA 30096<br />
+              (770) 476-2013
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Hours</h3>
+            <p class="text-white/80 leading-8">
+              Thursday – Saturday<br />
+              10 a.m. – 5 p.m.<br />
+              Sunday<br />
+              12 p.m. – 5 p.m.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Explore</h3>
+            <ul class="space-y-3 text-white/80">
+              <li>Exhibitions</li>
+              <li>Events</li>
+              <li><a href="ExhibitionTemplatePage.html" class="hover:text-white transition-colors">Exhibition Template</a></li>
+              <li><a href="ExhibitionTemplateGalleryPage.html" class="hover:text-white transition-colors">Gallery Template</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Support</h3>
+            <ul class="space-y-3 text-white/80">
+              <li>Donate</li>
+              <li>Volunteer</li>
+              <li>Museum Shop</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mt-20">
+          <p class="font-semibold text-lg">(c) 2019-2025 Southeastern Railway Museum.</p>
+          <p class="text-white/70 mt-3">Preserving railway heritage for future generations</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+      const cards = Array.from(document.querySelectorAll('.exhibition-card'));
+      const countLabel = document.getElementById('count-label');
+
+      function setActiveButton(activeFilter) {
+        buttons.forEach((button) => {
+          const isActive = button.dataset.filter === activeFilter;
+          button.className = isActive
+            ? 'filter-btn px-5 py-2 rounded-full transition-colors bg-primary text-primary-foreground'
+            : 'filter-btn px-5 py-2 rounded-full transition-colors bg-muted text-muted-foreground hover:bg-muted/80';
+        });
+      }
+
+      function applyFilter(filter) {
+        let visibleCount = 0;
+        cards.forEach((card) => {
+          const matches = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('hidden', !matches);
+          if (matches) visibleCount += 1;
+        });
+        countLabel.textContent = `Showing ${visibleCount} Exhibition${visibleCount === 1 ? '' : 's'}`;
+        setActiveButton(filter);
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => applyFilter(button.dataset.filter || 'all'));
+      });
+
+      applyFilter('all');
+    </script>
+  </body>
+</html>

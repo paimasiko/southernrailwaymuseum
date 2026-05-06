@@ -120,7 +120,7 @@ export function HomePage() {
 
       {/* Museum Floor Plan */}
       <section className="bg-primary text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 h-fit">
           <h2 className="text-3xl font-bold mb-4">
             Museum Floor Plan
           </h2>
@@ -132,11 +132,11 @@ export function HomePage() {
           </p>
 
           {/* Floor Plan Placeholder */}
-          <div className="bg-primary/80  rounded-lg h-[35rem] w-full flex items-center content-center justify-center">
+          <div className="bg-primary/80 rounded-lg h-[15rem] md:h-[35rem] w-full flex items-center content-center justify-center">
             <img
               src={`${import.meta.env.BASE_URL}floorplan.png`}
               alt="Museum Floor Plan"
-              className="h-full object-contain border border-white/20"
+              className="h-fit w-fit object-contain border border-white/20"
             />
           </div>
         </div>

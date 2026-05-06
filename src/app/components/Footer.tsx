@@ -1,3 +1,6 @@
+import { Link } from "react-router";
+import { ROUTES } from "../routes";
+
 export function Footer() {
   return (
     <footer className="bg-[#1f1f1f] text-white">
@@ -36,8 +39,16 @@ export function Footer() {
             <ul className="space-y-3 text-white/80">
               <li>Exhibitions</li>
               <li>Events</li>
-              <li>Education Programs</li>
-              <li>Memberships</li>
+              <li>
+                <Link to={ROUTES.exhibitionTemplate} className="hover:text-white transition-colors">
+                  Exhibition Template
+                </Link>
+              </li>
+              <li>
+                <Link to={ROUTES.exhibitionTemplateGallery} className="hover:text-white transition-colors">
+                  Gallery Template
+                </Link>
+              </li>
             </ul>
           </div>
 

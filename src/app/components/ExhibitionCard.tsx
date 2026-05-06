@@ -44,7 +44,7 @@ export function ExhibitionCard({
     ));
   const exploreLabel = displayVariant === "artifact" ? "Explore Artifact" : "Explore Exhibition";
   return (
-    <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+    <div className="bg-card border border-border rounded-3xl overflow-hidden hover:shadow-lg transition-shadow">
       <div className="aspect-[16/10] overflow-hidden">
         <img
           src={src}

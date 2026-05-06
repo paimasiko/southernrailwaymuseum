@@ -96,7 +96,7 @@ export function BaggageCarPage() {
       </section>
 
       {/* Virtual Tour */}
-      <section className="bg-primary text-white px-24 py-10">
+      <section className="bg-primary text-white px-8 md:px-24 py-10">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-4">
             Virtual Tour
@@ -108,7 +108,7 @@ export function BaggageCarPage() {
           </p>
 
           {/* Matterport Placeholder */}
-          <div className="bg-primary/80 border border-white/20 h-[45rem] w-full flex items-center justify-center">
+          <div className="bg-primary/80 border border-white/20 h-[15rem] md:h-[45rem] w-full flex items-center justify-center">
             <iframe
               width="100%"
               height="100%"
